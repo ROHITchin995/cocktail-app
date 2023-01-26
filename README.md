@@ -3,3 +3,7 @@ search for any cocktail, see details of each cocktail and view their ingredients
 
 This app uses API from 
 https://www.thecocktaildb.com/api.php
+
+![alt text](homepage.jpg)
+![alt text](nomatch.jpg)
+![alt text](singlecocktail.jpg)
