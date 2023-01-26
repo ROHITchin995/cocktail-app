@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
+import Loading from '../Components/Loading'
 
 export const SingleCocktail = () => {
     const {id} = useParams()
@@ -54,6 +55,9 @@ export const SingleCocktail = () => {
         }
         getCocktail()       
     }, [id])
+    if (loading) {
+        return <Loading/>
+      }
     if (!cocktail) {
         return <h2 className='section-title'>no cocktail to display</h2>
       } else {
