@@ -1,7 +1,30 @@
 import React from 'react'
+import { Cocktail } from './Cocktail'
+import { useGlobalContext } from '../context'
+import Loading from './Loading'
 
 export const CocktailList = () => {
+    const {cocktails, loading} = useGlobalContext()
+    if(loading){
+        return <Loading />
+    }
+    if(cocktails.length < 1){
+        return (
+            <h2 className='section-title'>
+                No cocktails matched your search criteria
+            </h2>
+        )
+    }
   return (
-    <div>CocktailList</div>
+    <section className='section'>
+        <h2 className='section-title'>Cocktails</h2>
+        <div className="cocktails-center">
+           {
+            cocktails.map((item)=>{
+                return <Cocktail key={item.id} {...item} />
+            })
+           }
+        </div>
+    </section>
   )
 }
