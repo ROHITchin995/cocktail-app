@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../src/logo.svg'
+import logo from '../../src/logo.svg'
 export const Navbar = () => {
   return (
     <nav className='navbar'>
